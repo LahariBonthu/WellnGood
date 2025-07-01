@@ -1,0 +1,268 @@
+/* Root container */
+.about-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem;
+  background: transparent;
+  color: #f6fcdf;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+.about-header {
+  text-align: left;               
+  margin-bottom: 1rem;           
+                
+}
+
+
+.about-title {
+  font-size: 2 rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+}
+
+.title-divider {
+  width: 520px;
+  height: 4 px;
+  background: #859F3D;
+  margin: 1rem auto;
+  border-radius: 2px;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #ccc;
+}
+
+/* Layout wrapper */
+.content-wrapper {
+  display: flex;
+  align-items: flex-start; 
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+
+/* Left */
+.content-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Right */
+.team-column {
+  width: 500px;
+}
+
+/* Mission & Usage */
+.mission-section {
+  display: grid;
+  gap: 25px;
+}
+
+.mission-card {
+  background: rgba(26, 26, 25, 0.7);
+  border-left: 4px solid #859F3D;
+  border-radius: 12px;
+  padding: 25px;
+  transition: 0.3s;
+}
+
+.mission-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.mission-card h2 {
+  color: #859F3D;
+  margin-bottom: 1rem;
+}
+
+.mission-card p {
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.arrow-list {
+  list-style-position: inside;   /* Makes bullets appear inside the padding */
+  padding-left: 1rem;            /* Adds space between the border and bullets */
+  margin: 0;                     /* Remove default margin */
+}
+
+.arrow-list li {
+  margin-bottom: 0.5rem;         /* Optional: spacing between items */
+}
+
+/* Tech Stack */
+.tech-section {
+  background: rgba(26, 26, 25, 0.7);
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.tech-section h2 {
+  color: #859F3D;
+  margin-bottom: 1rem;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.tech-item {
+  background: rgba(133, 159, 61, 0.1);
+  border: 1px solid rgba(133, 159, 61, 0.3);
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  color: #f6fcdf;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.tech-item:hover {
+  background: rgba(133, 159, 61, 0.25);
+  transform: translateY(-3px);
+}
+
+/* Team Section */
+.team-section {
+  background: rgba(26, 26, 25, 0.7);
+  padding: 25px;
+  border-radius: 12px;
+  position: sticky;
+  top: 20px;
+}
+
+.team-section h2 {
+  text-align: center;
+  color: #859F3D;
+  margin-bottom: 20px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two per row */
+  gap: 20px;
+}
+
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(40, 40, 38, 0.6);
+  border-radius: 15px;
+  padding: 20px;
+  transition: 0.3s;
+  text-align: center;
+}
+
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #859F3D;
+}
+
+
+.team-info {
+  padding: 0;
+}
+
+.team-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #f6fcdf;
+}
+
+.team-role {
+  color: #859F3D;
+  font-size: 0.95rem;
+  margin: 8px 0 15px;
+  font-style: italic;
+}
+
+
+.social-links {
+  display: flex;
+  gap: 10px;
+}
+
+.social-links a {
+  color: #859F3D;
+  font-size: 1.2rem;
+  transition: color 0.2s;
+}
+
+.social-links a:hover {
+  color: #f6fcdf;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .team-column {
+    width: 100%;
+  }
+
+  .team-section {
+    position: static;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    padding: 1.5rem;
+  }
+
+  .team-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .avatar {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 1.8rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .mission-card,
+  .tech-section,
+  .team-section {
+    padding: 20px;
+  }
+}

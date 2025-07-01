@@ -13,6 +13,18 @@
   --gray: #e2e8f0;
 }
 
+/* index.css */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  background: #222629; /* Or your main background */
+  color: #f6fcdf;       /* Optional */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+
 * {
   margin: 0;
   padding: 0;
