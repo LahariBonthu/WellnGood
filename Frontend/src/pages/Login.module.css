@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
 
 :global(.rightPanelActive) .signInContainer {
   transform: translateX(100%);
@@ -227,6 +229,15 @@ button:focus {
   width: 40px;
 }
 
+.orText {
+  font-family: 'Montserrat', serif;
+  font-size: 15px;
+  font-weight: 400;
+  margin: 10px 0;
+   color: #E86E2F;
+}
+
+
 .forgot {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -245,6 +256,7 @@ button:focus {
 
 .googleButton {
   display: flex;
+  font-family: 'Segoe UI', sans-serif; 
   align-items: center;
   justify-content: center;
   gap: 8px;
@@ -268,4 +280,10 @@ button:focus {
 .googleIcon {
   width: 20px;
   height: 20px;
+}
+.errorMessage {
+  color: red;
+  font-size: 0.9rem;
+  margin: 8px 0;
+  text-align: left;
 }

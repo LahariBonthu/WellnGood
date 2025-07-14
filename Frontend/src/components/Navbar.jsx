@@ -50,12 +50,13 @@ function Navbar() {
     },
     container: {
       display: 'flex',
-      justifyContent: 'space-between',
       alignItems: 'center',
-      maxWidth: '1200px',
-      margin: '0 auto',
+      justifyContent: 'space-between',
+      maxWidth: '100%',
       padding: '0 2rem',
     },
+
+
     logo: {
       fontSize: '2.5rem',
       fontWeight: 400,
@@ -65,16 +66,15 @@ function Navbar() {
     navLinks: {
       display: isMobile ? (isMenuOpen ? 'flex' : 'none') : 'flex',
       flexDirection: isMobile ? 'column' : 'row',
-      position: isMobile ? 'absolute' : 'static',
-      top: '70px',
-      left: 0,
-      width: isMobile ? '100%' : 'auto',
-      backgroundColor: isMobile ? '#111' : 'transparent',
-      padding: isMobile ? '1.5rem' : 0,
+      position: 'static',
+      width: 'auto',
+      backgroundColor: 'transparent',
+      padding: 0,
       gap: '1.5rem',
-      alignItems: isMobile ? 'flex-start' : 'center',
+      alignItems: 'center',
       marginLeft: 'auto',
     },
+
     navLink: {
       color: '#FFA500',
       backgroundColor: 'transparent',
@@ -200,31 +200,15 @@ function Navbar() {
               Login
             </Link>
           ) : (
-            <div
-              style={{ position: 'relative' }}
-              onMouseEnter={() => setIsDropdownOpen(true)}
-              onMouseLeave={() => setIsDropdownOpen(false)}
+            <button
+              onClick={handleLogout}
+              style={styles.navLink}
+              onMouseEnter={(e) => handleHover(e, true)}
+              onMouseLeave={(e) => handleHover(e, false)}
             >
-              <img
-                src={user.photo || profilePic}
-                alt="Profile"
-                style={styles.profileImage}
-              />
-              {isDropdownOpen && (
-                <div style={styles.dropdown}>
-                  <button
-                    onClick={handleLogout}
-                    style={{
-                      ...styles.navLink
-                    }}
-                    onMouseEnter={(e) => handleHover(e, true)}
-                    onMouseLeave={(e) => handleHover(e, false)}
-                  >
-                    LOGOUT
-                  </button>
-                </div>
-              )}
-            </div>
+              Logout
+            </button>
+
 
 
           )}

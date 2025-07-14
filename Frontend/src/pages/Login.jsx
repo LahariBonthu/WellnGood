@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styles from './Login.module.css';
 import googleIcon from '../assets/google-icon.svg';
 import signInGoogle from '../auth/signInGoogle';
-import api from '../api'; 
+import api from '../api';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -12,30 +12,49 @@ const Login = () => {
   const [signupData, setSignupData] = useState({ name: '', email: '', password: '' });
   const [signinData, setSigninData] = useState({ email: '', password: '' });
 
+  const [loginError, setLoginError] = useState('');
+  const [signupError, setSignupError] = useState('');
+
   const handleSignUp = () => {
     containerRef.current.classList.add(styles.rightPanelActive);
+    setLoginError('');
+    setSignupError('');
   };
 
   const handleSignIn = () => {
     containerRef.current.classList.remove(styles.rightPanelActive);
+    setLoginError('');
+    setSignupError('');
   };
 
   const handleSignUpSubmit = async (e) => {
     e.preventDefault();
+    setSignupError('');
     try {
       await api.post('/api/auth/signup', signupData);
       navigate('/dashboard');
     } catch (err) {
+      if (err.response && err.response.status === 409) {
+        setSignupError('Email already exists');
+      } else {
+        setSignupError('Network error. Please try again later.');
+      }
       console.error('Signup error:', err);
     }
   };
 
   const handleSignInSubmit = async (e) => {
     e.preventDefault();
+    setLoginError('');
     try {
       await api.post('/api/auth/login', signinData);
       navigate('/dashboard');
     } catch (err) {
+      if (err.response && err.response.status === 401) {
+        setLoginError('Incorrect email or password');
+      } else {
+        setLoginError('Network error. Please try again later.');
+      }
       console.error('Login error:', err);
     }
   };
@@ -58,7 +77,8 @@ const Login = () => {
                 Sign up with Google
               </button>
             </div>
-            <span>or</span>
+            <span className={styles.orText}>or</span>
+
             <input
               type="text"
               placeholder="Name"
@@ -80,6 +100,7 @@ const Login = () => {
               onChange={(e) => setSignupData({ ...signupData, password: e.target.value })}
               required
             />
+            {signupError && <p className={styles.errorMessage}>{signupError}</p>}
             <button type="submit">Sign Up</button>
           </form>
         </div>
@@ -98,7 +119,7 @@ const Login = () => {
                 Sign in with Google
               </button>
             </div>
-            <span>or use your account</span>
+            <span className={styles.orText}>or use your account</span>
             <input
               type="email"
               placeholder="Email"
@@ -113,6 +134,7 @@ const Login = () => {
               onChange={(e) => setSigninData({ ...signinData, password: e.target.value })}
               required
             />
+            {loginError && <p className={styles.errorMessage}>{loginError}</p>}
             <a href="#" className={styles.forgot}>Forgot your password?</a>
             <button type="submit">Sign In</button>
           </form>

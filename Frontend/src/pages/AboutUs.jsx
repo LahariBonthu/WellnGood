@@ -4,9 +4,14 @@ import {
   FaGithub,
   FaLinkedin,
   FaTwitter,
-  FaInstagram
+  FaInstagram,
+  FaEnvelope
 } from 'react-icons/fa';
 import './AboutStyles.css';
+import sanjeevAvatar from '../assets/sanjeev.jpeg';
+import lahariAvatar from '../assets/lahari.jpg'
+import lahariGAvatar from '../assets/lahariG.jpeg'
+import yashwanthAvatar from '../assets/yashwanth.jpeg'
 
 const techStack = [
   'React', 'Node.js', 'Google Fit API',
@@ -16,34 +21,52 @@ const techStack = [
 
 const teamMembers = [
   {
-    name: "",
-    role: "",
-    avatar: "https://via.placeholder.com/150"
+    name: "Sanjeev",
+    role: "Backend Developer",
+    avatar: sanjeevAvatar,
+    github: "https://github.com/sanjeev0304",
+    linkedin: "https://www.linkedin.com/in/sanjeev-modukuri-344a5625b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    email: "modukurisanjeev@gmail.com"
   },
   {
-    name: "",
-    role: "",
-    avatar: "https://via.placeholder.com/150"
+    name: "Lahari",
+    role: "Frontend Developer",
+    avatar: lahariAvatar,
+    github: "https://github.com/LahariBonthu",
+    linkedin: "https://www.linkedin.com/in/bonthusailahari/",
+    email: "laharibonthu1882@example.com"
   },
   {
-    name: "",
-    role: "",
-    avatar: "https://via.placeholder.com/150"
+    name: "Lahari",
+    role: "ML Developer",
+    avatar: lahariGAvatar,
+    github: "https://github.com/lahari998",
+    linkedin: "https://www.linkedin.com/in/lahari-gunti-234790257",
+    email: "guntilahari431@gmail.com"
   },
   {
-    name: "",
-    role: "Fullstack Developer",
-    avatar: "https://via.placeholder.com/150"
+    name: "Yashwanth",
+    role: "Frontend Developer",
+    avatar: yashwanthAvatar,
+    github: "https://github.com/Yashwanth112004",
+    linkedin: " https://www.linkedin.com/in/yashwanth-puligilla?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    email: "puligillayashwanth@gmail.com"
   },
   {
-    name: "",
-    role: "Fullstack Developer",
-    avatar: "https://via.placeholder.com/150"
+    name: "Priyanaka",
+    role: "ML Developer",
+    avatar: "https://via.placeholder.com/150",
+    github: "https://github.com/snehapatel",
+    linkedin: "https://linkedin.com/in/snehapatel",
+    email: "sneha@example.com"
   },
   {
-    name: "",
-    role: "Fullstack Developer",
-    avatar: "https://via.placeholder.com/150"
+    name: "Shourya",
+    role: "Backend Developer",
+    avatar: "https://via.placeholder.com/150",
+    github: "https://github.com/nikhilrao",
+    linkedin: "https://linkedin.com/in/nikhilrao",
+    email: "nikhil@example.com"
   }
 ];
 
@@ -119,10 +142,9 @@ const AboutUs = () => {
                     <h3>{member.name}</h3>
                     <p className="team-role">{member.role}</p>
                     <div className="social-links">
-                      <a href="#"><FaLinkedin /></a>
-                      <a href="#"><FaInstagram /></a>
-                      <a href="#"><FaGithub /></a>
-                      <a href="#"><FaTwitter /></a>
+                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+                      <a href={`mailto:${member.email}`}><FaEnvelope /></a>
+                      <a href={member.github} target="_blank" rel="noopener noreferrer"><FaGithub /></a>
                     </div>
                   </div>
                 </div>
