@@ -9,9 +9,11 @@ import {
 } from 'react-icons/fa';
 import './AboutStyles.css';
 import sanjeevAvatar from '../assets/sanjeev.jpeg';
-import lahariAvatar from '../assets/lahari.jpg'
-import lahariGAvatar from '../assets/lahariG.jpeg'
-import yashwanthAvatar from '../assets/yashwanth.jpeg'
+import lahariAvatar from '../assets/lahari.jpg';
+import lahariGAvatar from '../assets/lahariG.jpeg';
+import yashwanthAvatar from '../assets/yashwanth.jpeg';
+import priyankaAvatar from '../assets/priyanka.jpeg';
+import shouryaAvatar from '../assets/shourya.jpeg'
 
 const techStack = [
   'React', 'Node.js', 'Google Fit API',
@@ -55,18 +57,18 @@ const teamMembers = [
   {
     name: "Priyanaka",
     role: "ML Developer",
-    avatar: "https://via.placeholder.com/150",
-    github: "https://github.com/snehapatel",
-    linkedin: "https://linkedin.com/in/snehapatel",
-    email: "sneha@example.com"
+    avatar: priyankaAvatar,
+    github: "https://github.com/priya8922",
+    linkedin: "www.linkedin.com/in/priyankakaniganti",
+    email: "da24m013@smail.iitm.ac.in"
   },
   {
     name: "Shourya",
     role: "Backend Developer",
-    avatar: "https://via.placeholder.com/150",
-    github: "https://github.com/nikhilrao",
-    linkedin: "https://linkedin.com/in/nikhilrao",
-    email: "nikhil@example.com"
+    avatar: shouryaAvatar,
+    github: "https://github.com/shourya2805",
+    linkedin: "http://linkedin.com/in/shourya-korrapati-139865289/",
+    email: "korrapatishourya@gmail.com"
   }
 ];
 
